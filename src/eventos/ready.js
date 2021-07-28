@@ -18,7 +18,7 @@ module.exports = {
         ];
 
         setInterval(() => { 
-            client.setPresence({
+            client.user.setPresence({
                 activity: presences[Math.floor(Math.random() * presences.length)],
                 status: "dnd"
             });
