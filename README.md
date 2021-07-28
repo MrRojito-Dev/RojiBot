@@ -5,6 +5,32 @@ Puedes aportar el código que quieras, este bot no tiene un proposito principal 
 
 <br>
 
+### Plantillas:
+* Comandos:
+```js
+module.exports = {
+    name: "Nombre del comando",
+    aliases: [],
+    args: 0, // Cantidad de argumentos OBLIGATORIOS
+    use: "r!comando argumentos", // Si el comando no requiere argumentos solo dejen el nombre del comando
+    category: "categoria", // debe ser el mismo nombre q tiene la carpeta
+    dev: false,
+    run: (Discord, client, message, args) => {
+        // código del comando
+}}
+```
+
+* Eventos:
+```js
+const Discord = require("discord.js-light");
+module.exports = {
+    name: "Nombre del evento",
+    emitter: "Emisor", // on, once
+    run: (client, parametros) => {
+
+}}
+```
+
 ### Comandos del proyecto
 * Para instalar las dependencias del proyecto, utiliza el comando `npm i` dentro de la carpeta principal (en donde está el archivo `package.json`)
 
