@@ -8,13 +8,16 @@ module.exports = {
 
         const member = await messageReaction.message.guild.members.fetch(user.id);
 
+        const PiñaFan = messageReaction.message.guild.roles.cache.get("869968063867518997");
+        const RojiFan = messageReaction.message.guild.roles.cache.get("860952790602874900");
+
         switch (messageReaction.emoji.name) {
             case "🪀":
-                await member.roles.add("860952790602874900");
+                member.roles.add(RojiFan);
                 break;
     
             case "🍍":
-                await member.roles.add("869968063867518997");
+                member.roles.add(PiñaFan);
                 break;
 
             default:

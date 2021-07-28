@@ -24,7 +24,7 @@ const client = new Discord.Client({
     cacheEmojis: false,
     cacheChannels: false,
     cacheOverwrites: false,
-    cacheRoles: false,
+    cacheRoles: true,
     cacheGuilds: true,
     cachePresences: false,
 });
