@@ -6,7 +6,7 @@ module.exports = {
     use: "r!eval <Código>",
     category: "dev",
     dev: true,
-    run: (Discord, client, message, args) => {
+    run: async (Discord, client, message, args) => {
         try {
             let output = await eval(args.join(' '));
             let type = typeof output;
