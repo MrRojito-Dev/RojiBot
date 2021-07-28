@@ -30,3 +30,9 @@ const client = new Discord.Client({
 });
 
 client.login()
+.then(() => {
+    console.log(`Sesión iniciada como ${client.user.tag}`);
+
+    app.listen(process.env.PORT || 3000, () => console.log(`Express server listen on port ${process.env.PORT || 3000}`));
+})
+.catch((err) => console.error(err));
