@@ -17,6 +17,8 @@ module.exports = {
         if (cmd.dev && !client.config.devs.includes(message.author.id)) return message.reply(`solo mis desarrolladores pueden utilizar este comando.`);
         if (cmd.args > args.length) return message.reply(`te faltaron argumentos.\n> El uso correcto es: \`${cmd.use}\``)
 
+        
+
         try {
             cmd.run(Discord, client, message, args);
         } catch (error) {
