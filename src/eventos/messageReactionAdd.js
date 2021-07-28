@@ -6,7 +6,7 @@ module.exports = {
         // Reaction roles
         if (messageReaction.message.id !== "870032853545664553") return;
 
-        const member = messageReaction.message.guild.member(user);
+        const member = await messageReaction.message.guild.members.fetch(user.id);
 
         switch (messageReaction.emoji.name) {
             case "🪀":
@@ -18,7 +18,6 @@ module.exports = {
                 break;
 
             default:
-                return;
                 break;
         };
 }}
