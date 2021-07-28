@@ -29,6 +29,9 @@ const client = new Discord.Client({
     cachePresences: false,
 });
 
+client.commands = new Discord.Collection();
+client.config = require('./utils/config.json');
+
 /* Handler */
 let { readdirSync } = require('fs');
 
@@ -42,7 +45,15 @@ for (const file of readdirSync(`${__dirname}/eventos/`)) {
 }
 
 // Comandos
+for (const subFolder of readdirSync(`${__dirname}/comandos`)) {
+    for (const file of readdirSync(`${__dirname}/comandos/${subFolder}`)) {
+        if (file.endsWith(".js")) {
+            let command = require(`${__dirname}/comandos/${subFolder}/${file}`);
 
+            client.commands.set(command.name, command);
+        }
+    }
+}
 
 client.login()
 .then(() => {
