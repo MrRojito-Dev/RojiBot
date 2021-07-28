@@ -8,7 +8,7 @@ module.exports = {
                 type: "WATCHING"
             },
             {
-                name: "explotar cosas",
+                name: "explotar casas",
                 type: "PLAYING"
             },
             {

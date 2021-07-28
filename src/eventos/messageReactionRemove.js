@@ -13,13 +13,13 @@ module.exports = {
 
         switch (messageReaction.emoji.name) {
             case "🪀":
-                if (member.roles.cache.has(RojiFan)) {
+                if (member.roles.cache.get(RojiFan.id)) {
                     member.roles.remove(RojiFan);
                 }
                 break;
     
             case "🍍":
-                if (member.roles.cache.has(PiñaFan)) {
+                if (member.roles.cache.get(PiñaFan.id)) {
                     member.roles.remove(PiñaFan);
                 }
                 break;
